@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import Header from "./components/header.scss";
+import Header from "./components/header";
 
 // src\styles\components\Layout\layout.jsx
 
