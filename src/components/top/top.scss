@@ -1,0 +1,94 @@
+.top-section {
+  margin-top: 5rem;
+  padding: 0 3rem;
+  color: white;
+  overflow: hidden;
+}
+
+
+.top-container {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  padding: 0 2rem 1.5rem;
+  scroll-behavior: smooth;
+
+  &::-webkit-scrollbar {
+    display: none; // Oculta scrollbar para look más limpio
+  }
+}
+
+.top-card {
+  position: relative;
+  display: flex;
+  flex: 0 0 auto;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  padding: 0;
+
+  &:hover {
+    transform: scale(1.05); // Zoom ligero al pasar el mouse
+  }
+
+  // El número gigante a la izquierda
+  &__rank-wrapper {
+    z-index: 1;
+    margin-right: -40px; // Esto hace que el número "se meta" bajo el poster
+  }
+
+  .top-rank {
+    font-size: 12rem;
+    font-weight: 900;
+    line-height: 1;
+    color: #000; // Fondo del número negro
+    -webkit-text-stroke: 4px #595959; // El borde gris/blanco característico
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  // El poster de la película
+  &__image-wrapper {
+    img {
+      width: 140px; // Proporción vertical tipo Netflix
+      height: 200px;
+      object-fit: cover;
+      border-radius: 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    }
+  }
+}
+
+
+// &:hover img {
+//   transform: scale(1.12);
+// }
+
+@media (max-width: 480px) {
+  .top-card {
+    img {
+      width: 110px;
+      height: 170px;
+    }
+  }
+
+  .top-rank {
+    font-size: 160px;
+    left: -25px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .top-card {
+    img {
+      width: 130px;
+      height: 200px;
+    }
+  }
+
+  .top-rank {
+    font-size: 190px;
+    left: -30px;
+  }
+}

@@ -1,0 +1,201 @@
+@use '../base/_variables.scss' as *;
+
+
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 70px;
+    transition: background-color 0.3s ease;
+    background: transparent;
+    z-index: 1000;
+
+    &__container {
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        align-items: center;
+        padding: $spacing-md;
+    }
+
+    &__logo {
+        font-size: 1.4rem;
+        font-weight: bold;
+        color: $color-primary;
+    }
+
+    &__toggle {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        z-index: 1100;
+
+        span {
+            width: 25px;
+            height: 3px;
+            background: $color-light;
+            transition: 0.3s ease;
+        }
+
+        &.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        &.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        &.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(6px, -6px);
+        }
+    }
+
+    &__nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 75%;
+        height: 100vh;
+        background: $color-dark;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        gap: $spacing-lg;
+        padding: $spacing-lg;
+        transition: right 0.4s ease-in-out;
+
+        &.open {
+            right: 0;
+        }
+    }
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: $spacing-md;
+
+        li {
+            cursor: pointer;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:hover {
+                color: $color-primary;
+            }
+
+            .nav-link {
+                text-decoration: none;
+                color: $color-light;
+                transition: 0.3s ease;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+
+            .active {
+                color: $color-primary;
+                font-weight: bold;
+            }
+        }
+
+
+    }
+
+    &__search {
+        input {
+            width: 100%;
+            padding: $spacing-sm;
+            border-radius: $radius-md;
+            border: none;
+            outline: none;
+        }
+    }
+}
+
+.header--scrolled {
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+@media (min-width: 768px) {
+    .header {
+
+        &__container {
+            grid-template-columns: auto 1fr;
+            gap: $spacing-lg;
+        }
+
+        &__toggle {
+            display: none; // Ocultamos hamburguesa
+        }
+
+        &__nav {
+            position: static;
+            width: auto;
+            height: auto;
+            background: transparent;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0;
+            right: 0;
+        }
+
+        &__menu {
+            flex-direction: row;
+            gap: $spacing-lg;
+
+            li {
+                font-size: 0.95rem;
+            }
+        }
+
+        &__search {
+            input {
+                width: 180px;
+            }
+        }
+
+    }
+}
+
+
+
+@media (min-width: 1024px) {
+    .header {
+
+        &__container {
+            padding: $spacing-md $spacing-xl;
+        }
+
+        &__logo {
+            font-size: 1.6rem;
+        }
+
+        &__menu {
+            gap: $spacing-xl;
+
+            li {
+                font-size: 1rem;
+            }
+        }
+
+        &__search {
+            input {
+                width: 220px;
+            }
+        }
+
+    }
+}

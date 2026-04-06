@@ -1,0 +1,33 @@
+.movie-card {
+    min-width: 180px;
+    height: 260px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+
+    &:hover {
+        transform: scale(1.08);
+        z-index: 10;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .movie-card {
+        min-width: 160px;
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .movie-card {
+        min-width: 200px;
+    }
+}

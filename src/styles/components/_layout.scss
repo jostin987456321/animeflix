@@ -1,0 +1,5 @@
+@use '../base/_variables.scss' as *;
+
+.layout {
+  padding-top: $header-height; // Compensa header fixed
+}

@@ -1,0 +1,71 @@
+.row {
+    margin-top: 5rem;
+    padding: 0 2rem;
+
+    &__title {
+        color: white;
+        margin-bottom: 1rem;
+        font-size: 1.4rem;
+    }
+
+    /* ===============================
+    CONTENEDOR DE LAS PELÍCULAS
+  ================================ */
+
+    &__movies {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        /* Ocultar scrollbar */
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+
+
+
+
+}
+
+    /* ===============================
+    CARD DE PELÍCULA
+    ================================ */
+.movie-card {
+    min-width: 200px; // IMPORTANTE: sin esto no se ven
+    cursor: pointer;
+    transition: transform 0.3s ease;
+
+    img {
+        width: 100%;
+        border-radius: 6px;
+        display: block;
+    }
+
+    &:hover {
+        transform: scale(1.08);
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .row {
+        padding: 0 2rem;
+
+        &__title {
+            font-size: 1.4rem;
+        }
+    }
+}
+
+/* Desktop */
+@media (min-width: 1200px) {
+    .row {
+        padding: 0 3rem;
+
+        &__title {
+            font-size: 1.6rem;
+        }
+    }
+}

@@ -1,0 +1,101 @@
+/* Overlay oscuro estilo Netflix */
+.modal_overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    animation: fadeIn 0.3s ease;
+}
+
+/* Contenedor principal */
+.modal_container {
+    width: 90%;
+    max-width: 1000px;
+    background: #141414;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    animation: scaleIn 0.3s ease;
+}
+
+/* Botón cerrar */
+.modal_close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 12px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Video */
+.modal_video iframe {
+    width: 100%;
+    height: 450px;
+}
+
+/* Contenido */
+.modal_content {
+    padding: 2rem;
+}
+
+.modal_content h2 {
+    margin-bottom: 1rem;
+}
+
+/* Estrellas */
+.modal_stars {
+    margin-bottom: 1rem;
+    font-size: 18px;
+}
+
+.modal_score {
+    margin-left: 10px;
+    color: #bbb;
+}
+
+/* Botón ver */
+.modal_watch {
+    margin-top: 1rem;
+    padding: 10px 20px;
+    background: #e50914;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
